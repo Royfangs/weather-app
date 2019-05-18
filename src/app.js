@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 const app = express();
+const port = process.env.PORT || 3000;
 
 const geocode = require('./ultis/geocode');
 const forecast = require('./ultis/forecast');
@@ -98,6 +99,6 @@ app.get('*', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('server is up on port 3000.');
+app.listen(port, () => {
+  console.log(`server is up on port ${port}.`);
 });
